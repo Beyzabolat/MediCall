@@ -16,6 +16,8 @@
     <color name="purpleDark">#FF210642</color>
     <color name="yellowLight">#fff777</color>
 
-
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDarkk">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
 
 </resources>
