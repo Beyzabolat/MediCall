@@ -1,27 +1,26 @@
 package com.example.medicall;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-
 import java.util.List;
 
 // 8- Creating and configuring This class (ADAPTER)
-public class RecyclerViewAdaptery extends
-        RecyclerView.Adapter<RecyclerViewAdaptery.ImageViewHolder> {
+public class RecyclerViewAdaptery extends RecyclerView.Adapter<RecyclerViewAdaptery.ImageViewHolder> {
 
     // Variables
     Context mContext;
     List<row> mData;
+    private OnItemClickListener mListener;
 
     // Constructor
     public RecyclerViewAdaptery(Context mContext, List<row> mData) {
@@ -34,21 +33,16 @@ public class RecyclerViewAdaptery extends
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // 9- ImageView Holder - Binding views
         // 10- Creating RecyclerView Item Layout
-        View view = LayoutInflater.from(mContext).
-                inflate(R.layout.recyclerview_item,
-                        parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.recyclerview_item, parent, false);
         return new ImageViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
-
         // Adding Glide library to load the images faster
         // Binding image here
         // USING GLIDE LIBRARY
-
-        Glide.
-                with(mContext)
+        Glide.with(mContext)
                 .load(mData.get(position).getImg())
                 .into(holder.img);
     }
@@ -58,10 +52,15 @@ public class RecyclerViewAdaptery extends
         return mData.size();
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder implements
-            View.OnClickListener{
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 
+    public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView img;
 
         public ImageViewHolder(@NonNull View itemView) {
@@ -74,14 +73,12 @@ public class RecyclerViewAdaptery extends
 
         @Override
         public void onClick(View view) {
-
-            // Put here the code of click events on items
-            if (getLayoutPosition() == 0){
-                Toast.makeText(mContext,
-                        "You Clicked me ",
-                        Toast.LENGTH_SHORT).show();
+            if (mListener != null) {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    mListener.onItemClick(position);
+                }
             }
-
         }
     }
 }
