@@ -21,10 +21,10 @@ public class HomeActivity extends AppCompatActivity {
     private List<row> appList;
 
     int[] covers = new int[]{
-            R.drawable.fash1,
-            R.drawable.fash2,
-            R.drawable.fash3,
-            R.drawable.fash4,
+            R.drawable.home1,
+            R.drawable.home2,
+            R.drawable.home3,
+            R.drawable.home4,
             R.drawable.fash5,
             R.drawable.fash6
     };
