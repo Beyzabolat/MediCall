@@ -12,7 +12,7 @@
             layout="@layout/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
             <ImageButton
                 android:id="@+id/btn_back"
                 android:layout_width="wrap_content"
@@ -252,7 +252,7 @@
                 <ImageView
                     android:layout_width="107dp"
                     android:layout_height="112dp"
-                    android:src="@drawable/göz6"/>
+                    android:src="@drawable/eye"/>
 
                 <TextView
                     android:layout_width="wrap_content"
