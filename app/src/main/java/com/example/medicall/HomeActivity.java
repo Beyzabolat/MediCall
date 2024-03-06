@@ -2,6 +2,7 @@ package com.example.medicall;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -56,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         IntializeDataIntoRecyclerView();
+
 
         adapter.setOnItemClickListener(new RecyclerViewAdaptery.OnItemClickListener() {
             @Override
