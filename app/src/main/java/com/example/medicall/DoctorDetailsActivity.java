@@ -3,6 +3,7 @@ package com.example.medicall;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -94,6 +95,20 @@ public class DoctorDetailsActivity extends AppCompatActivity{
 
 
 
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                Intent it=new Intent(DoctorDetailsActivity.this, BookAppointmentActivity.class);
+
+                it.putExtra("text1", title);
+                it.putExtra("text2", doctor_details[i][0]);
+                it.putExtra("text3", doctor_details[i][1]);
+                it.putExtra("text4", doctor_details[i][3]);
+                it.putExtra("text5",doctor_details[i][4]);
+                startActivity(it);
+
+            }
+        });
 
 
 
@@ -110,51 +125,53 @@ public class DoctorDetailsActivity extends AppCompatActivity{
 
             };
     private String[][] doctor_details_2 = {
-            {"Doktor Adı : Dr. Emre Aksoy", "Hastane Adresi : İzmir Bulvarı No:789", "Yaş : 40", "Telefon Numarası : 555-987-6543", "600"},
-            {"Doktor Adı : Dr. Elif Korkmaz", "Hastane Adresi : Ankara Caddesi No:321", "Yaş : 37", "Telefon Numarası : 555-567-8901", "600"},
-            {"Doktor Adı : Dr. Burak Demir", "Hastane Adresi : Bursa Sokak No:456", "Yaş : 48", "Telefon Numarası : 555-234-5678", "600"},
-            {"Doktor Adı : Dr. Selin Yılmaz", "Hastane Adresi : Antalya Bulvarı No:654", "Yaş : 43", "Telefon Numarası : 555-876-5432", "600"},
-            {"Doktor Adı : Dr. Canan Çelik", "Hastane Adresi : İstanbul Caddesi No:987", "Yaş : 39", "Telefon Numarası : 555-345-6789", "600"}
+            {"Dr. Emre Aksoy", "İzmir Bulvarı No:789", "40", "555-987-6543", "600"},
+            {"Dr. Elif Korkmaz", "Ankara Caddesi No:321", "37", "555-567-8901", "600"},
+            {"Dr. Burak Demir", "Bursa Sokak No:456", "48", "555-234-5678", "600"},
+            {"Dr. Selin Yılmaz", "Antalya Bulvarı No:654", "43", "555-876-5432", "600"},
+            {"Dr. Canan Çelik", "İstanbul Caddesi No:987", "39", "555-345-6789", "600"}
     };
 
     private String[][] doctor_details_3 = {
-            {"Doktor Adı : Dr. Ali Kaplan", "Hastane Adresi : İstanbul Bulvarı No:123", "Yaş : 42", "Telefon Numarası : 555-123-4567", "600"},
-            {"Doktor Adı : Dr. Zeynep Kaya", "Hastane Adresi : Ankara Sokak No:456", "Yaş : 36", "Telefon Numarası : 555-987-6543", "600"},
-            {"Doktor Adı : Dr. Burak Yıldırım", "Hastane Adresi : İzmir Caddesi No:789", "Yaş : 41", "Telefon Numarası : 555-567-8901", "600"},
-            {"Doktor Adı : Dr. Elif Demir", "Hastane Adresi : Antalya Bulvarı No:321", "Yaş : 49", "Telefon Numarası : 555-234-5678", "600"},
-            {"Doktor Adı : Dr. Selim Çetin", "Hastane Adresi : Bursa Sokak No:654", "Yaş : 44", "Telefon Numarası : 555-876-5432", "600"}
+            {"Dr. Ali Kaplan", "İstanbul Bulvarı No:123", "42", "555-123-4567", "600"},
+            {"Dr. Zeynep Kaya", "Ankara Sokak No:456", "36", "555-987-6543", "600"},
+            {"Dr. Burak Yıldırım", "İzmir Caddesi No:789", "41", "555-567-8901", "600"},
+            {"Dr. Elif Demir", "Antalya Bulvarı No:321", "49", "555-234-5678", "600"},
+            {"Dr. Selim Çetin", "Bursa Sokak No:654", "44", "555-876-5432", "600"}
     };
 
     private String[][] doctor_details_4 = {
-            {"Doktor Adı : Dr. Cemal Yılmaz", "Hastane Adresi : İstanbul Sokak No:123", "Yaş : 47", "Telefon Numarası : 555-123-4567", "600"},
-            {"Doktor Adı : Dr. Sevil Korkmaz", "Hastane Adresi : Ankara Bulvarı No:456", "Yaş : 35", "Telefon Numarası : 555-987-6543", "600"},
-            {"Doktor Adı : Dr. Ayşe Kaya", "Hastane Adresi : İzmir Caddesi No:789", "Yaş : 50", "Telefon Numarası : 555-567-8901", "600"},
-            {"Doktor Adı : Dr. Emir Demir", "Hastane Adresi : Antalya Sokak No:321", "Yaş : 46", "Telefon Numarası : 555-234-5678", "600"},
-            {"Doktor Adı : Dr. Esra Yıldız", "Hastane Adresi : Bursa Bulvarı No:654", "Yaş : 34", "Telefon Numarası : 555-876-5432", "600"}
+            {"Dr. Cemal Yılmaz", "İstanbul Sokak No:123", "47", "555-123-4567", "600"},
+            {"Dr. Sevil Korkmaz", "Ankara Bulvarı No:456", "35", "555-987-6543", "600"},
+            {"Dr. Ayşe Kaya", "İzmir Caddesi No:789", "50", "555-567-8901", "600"},
+            {"Dr. Emir Demir", "Antalya Sokak No:321", "46", "555-234-5678", "600"},
+            {"Dr. Esra Yıldız", "Bursa Bulvarı No:654", "34", "555-876-5432", "600"}
     };
 
     private String[][] doctor_details_5 = {
-            {"Doktor Adı : Dr. Hasan Aksoy", "Hastane Adresi : Ankara Bulvarı No:123", "Yaş : 41", "Telefon Numarası : 555-123-4567", "600"},
-            {"Doktor Adı : Dr. Yasemin Kaya", "Hastane Adresi : İstanbul Sokak No:456", "Yaş : 37", "Telefon Numarası : 555-987-6543", "600"},
-            {"Doktor Adı : Dr. Murat Demir", "Hastane Adresi : İzmir Bulvarı No:789", "Yaş : 45", "Telefon Numarası : 555-567-8901", "600"},
-            {"Doktor Adı : Dr. Aslı Çelik", "Hastane Adresi : Antalya Caddesi No:321", "Yaş : 39", "Telefon Numarası : 555-234-5678", "600"},
-            {"Doktor Adı : Dr. Mehmet Toprak", "Hastane Adresi : Bursa Sokak No:654", "Yaş : 47", "Telefon Numarası : 555-876-5432", "600"}
+            {"Dr. Hasan Aksoy", "Ankara Bulvarı No:123", "41", "555-123-4567", "600"},
+            {"Dr. Yasemin Kaya", "İstanbul Sokak No:456", "37", "555-987-6543", "600"},
+            {"Dr. Murat Demir", "İzmir Bulvarı No:789", "45", "555-567-8901", "600"},
+            {"Dr. Aslı Çelik", "Antalya Caddesi No:321", "39", "555-234-5678", "600"},
+            {"Dr. Mehmet Toprak", "Bursa Sokak No:654", "47", "555-876-5432", "600"}
     };
 
     private String[][] doctor_details_6 = {
-            {"Doktor Adı : Dr. Zeki Yılmaz", "Hastane Adresi : İstanbul Bulvarı No:123", "Yaş : 48", "Telefon Numarası : 555-123-4567", "600"},
-            {"Doktor Adı : Dr. Nazlı Korkmaz", "Hastane Adresi : Ankara Caddesi No:456", "Yaş : 36", "Telefon Numarası : 555-987-6543", "600"},
-            {"Doktor Adı : Dr. Melis Demir", "Hastane Adresi : İzmir Sokak No:789", "Yaş : 43", "Telefon Numarası : 555-567-8901", "600"},
-            {"Doktor Adı : Dr. Hakan Yıldırım", "Hastane Adresi : Antalya Bulvarı No:321", "Yaş : 40", "Telefon Numarası : 555-234-5678", "600"},
-            {"Doktor Adı : Dr. Zehra Çelik", "Hastane Adresi : Bursa Caddesi No:654", "Yaş : 38", "Telefon Numarası : 555-876-5432", "600"}
+            {"Dr. Zeki Yılmaz", "İstanbul Bulvarı No:123", "48", "555-123-4567", "600"},
+            {"Dr. Nazlı Korkmaz", "Ankara Caddesi No:456", "36", "555-987-6543", "600"},
+            {"Dr. Melis Demir", "İzmir Sokak No:789", "43", "555-567-8901", "600"},
+            {"Dr. Hakan Yıldırım", "Antalya Bulvarı No:321", "40", "555-234-5678", "600"},
+            {"Dr. Zehra Çelik", "Bursa Caddesi No:654", "38", "555-876-5432", "600"}
     };
+
     private String[][] doctor_details_7 = {
-            {"Doktor Adı : Dr. Zeki Yılmaz", "Hastane Adresi : İstanbul Bulvarı No:123", "Yaş : 48", "Telefon Numarası : 555-123-4567", "600"},
-            {"Doktor Adı : Dr. Nazlı Korkmaz", "Hastane Adresi : Ankara Caddesi No:456", "Yaş : 36", "Telefon Numarası : 555-987-6543", "600"},
-            {"Doktor Adı : Dr. Melis Demir", "Hastane Adresi : İzmir Sokak No:789", "Yaş : 43", "Telefon Numarası : 555-567-8901", "600"},
-            {"Doktor Adı : Dr. Hakan Yıldırım", "Hastane Adresi : Antalya Bulvarı No:321", "Yaş : 40", "Telefon Numarası : 555-234-5678", "600"},
-            {"Doktor Adı : Dr. Zehra Çelik", "Hastane Adresi : Bursa Caddesi No:654", "Yaş : 38", "Telefon Numarası : 555-876-5432", "600"}
+            {"Dr. Zeki Yılmaz", "İstanbul Bulvarı No:123", "48", "555-123-4567", "600"},
+            {"Dr. Nazlı Korkmaz", "Ankara Caddesi No:456", "36", "555-987-6543", "600"},
+            {"Dr. Melis Demir", "İzmir Sokak No:789", "43", "555-567-8901", "600"},
+            {"Dr. Hakan Yıldırım", "Antalya Bulvarı No:321", "40", "555-234-5678", "600"},
+            {"Dr. Zehra Çelik", "Bursa Caddesi No:654", "38", "555-876-5432", "600"}
     };
+
 
 
 
