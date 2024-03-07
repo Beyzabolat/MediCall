@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,14 +18,95 @@ import java.util.HashMap;
 
 public class DoctorDetailsActivity extends AppCompatActivity{
 
+    TextView tv;
+    String[][] doctor_details={};
+    HashMap<String,String> item;
+    ArrayList list;
+    SimpleAdapter sa;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_doctor_details);
+
+        tv=findViewById(R.id.textViewDDTitle);
+
+        Intent it=getIntent();
+        String title=it.getStringExtra("title");
+        tv.setText(title);
+
+        if (title.compareTo("Aile Hekimleri")==0)
+            doctor_details=doctor_details1;
+        else
+
+        if (title.compareTo("Diş Hekimleri")==0)
+            doctor_details=doctor_details_2;
+        else
+        if (title.compareTo("Kardiyologlar")==0)
+            doctor_details=doctor_details_3;
+        else
+
+        if (title.compareTo("Cerrahlar")==0)
+            doctor_details=doctor_details_4;
+        else
+
+        if (title.compareTo("Diyetisyenler")==0)
+            doctor_details=doctor_details_5;
+        else
+        if (title.compareTo("Göz Hekimleri")==0)
+            doctor_details=doctor_details_6;
+        else
+            doctor_details=doctor_details_7;
+
+
+
+
+        ImageButton backButton = findViewById(R.id.btn_back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DoctorDetailsActivity.this,FindDoctorActivity.class));
+            }
+        });
+
+
+
+        list = new ArrayList();
+        for (int i=0;i<doctor_details.length;i++){
+            item=new HashMap<String,String>();
+            item.put("line1", doctor_details[i][0]);
+            item.put("line2", doctor_details[i][1]);
+            item.put("line3", doctor_details[i][2]);
+            item.put("line4", doctor_details[i][3]);
+            item.put("line5",doctor_details[i][4]+ "/-");
+            list.add(item);
+
+
+
+
+        }
+        sa=new SimpleAdapter(this,list, R.layout.multi_lines, new String[]
+                {"line1","line2","line3","line4","line5"},
+                new int[]{R.id.textViewDoctorName,R.id.textViewHospitalAddress,R.id.textViewAge,
+                        R.id.textViewPhoneNumber,R.id.textViewSalary}
+        );
+        ListView lst=findViewById(R.id.listviewDD);
+        lst.setAdapter(sa);
+
+
+
+
+
+
+    }
+
     private String[][] doctor_details1=
             {
-                    {"Doktor Adı : Dr. Mehmet Yılmaz", "Hastane Adresi : Ankara Caddesi No:123", "Yaş : 45", "Telefon Numarası : 555-123-4567", "600"},
-                    {"Doktor Adı : Dr. Ayşe Kaya", "Hastane Adresi : İstanbul Bulvarı No:456", "Yaş : 38", "Telefon Numarası : 555-987-6543", "600"},
-                    {"Doktor Adı : Dr. Ahmet Demir", "Hastane Adresi : İzmir Sokak No:789", "Yaş : 50", "Telefon Numarası : 555-567-8901", "600"},
-                    {"Doktor Adı : Dr. Fatma Çelik", "Hastane Adresi : Bursa Caddesi No:321", "Yaş : 42", "Telefon Numarası : 555-234-5678", "600"},
-                    {"Doktor Adı : Dr. Ali Toprak", "Hastane Adresi : Antalya Bulvarı No:654", "Yaş : 47", "Telefon Numarası : 555-876-5432", "600"},
-                    {"Doktor Adı : Dr. Zeynep Yıldırım", "Hastane Adresi : Adana Sokak No:987", "Yaş : 35", "Telefon Numarası : 555-345-6789", "600"}
+                    {"Dr. Mehmet Yılmaz", "Ankara Caddesi No:123", "45", "555-123-4567", "600"},
+                    {"Dr. Ayşe Kaya", "İstanbul Bulvarı No:456", "38", "555-987-6543", "600"},
+                    {"Dr. Ahmet Demir", "İzmir Sokak No:789", "50", "555-567-8901", "600"},
+                    {"Dr. Fatma Çelik", "Bursa Caddesi No:321", "42", "555-234-5678", "600"},
+                    {"Dr. Ali Toprak", "Antalya Bulvarı No:654", "47", "555-876-5432", "600"},
+                    {"Dr. Zeynep Yıldırım", "dana Sokak No:987", "35", "555-345-6789", "600"}
 
             };
     private String[][] doctor_details_2 = {
@@ -66,72 +148,16 @@ public class DoctorDetailsActivity extends AppCompatActivity{
             {"Doktor Adı : Dr. Hakan Yıldırım", "Hastane Adresi : Antalya Bulvarı No:321", "Yaş : 40", "Telefon Numarası : 555-234-5678", "600"},
             {"Doktor Adı : Dr. Zehra Çelik", "Hastane Adresi : Bursa Caddesi No:654", "Yaş : 38", "Telefon Numarası : 555-876-5432", "600"}
     };
-
-
-
-    TextView tv;
-    String[][] doctor_details={};
-    ArrayList List;
-    SimpleAdapter sa;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_details);
-
-        tv=findViewById(R.id.textViewDDTitle);
-        Intent it=getIntent();
-        String title=it.getStringExtra("title");
-        tv.setText(title);
-
-        if (title.compareTo("Aile Hekimleri")==0)
-            doctor_details=doctor_details1;
-        else
-
-        if (title.compareTo("Diş Hekimleri")==0)
-            doctor_details=doctor_details_2;
-        else
-        if (title.compareTo("Kardiyologlar")==0)
-            doctor_details=doctor_details_3;
-        else
-
-        if (title.compareTo("Cerrahlar")==0)
-            doctor_details=doctor_details_5;
-        else
-
-        if (title.compareTo("Diyetisyenler")==0)
-            doctor_details=doctor_details_5;
-        else
-            doctor_details=doctor_details_6;
-
-
-
-        ImageButton backButton = findViewById(R.id.btn_back);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // Aktiviteyi kapat
-            }
-        });
-        List = new ArrayList();
-        for (int i=0;i<doctor_details.length;i++){
-            item=new HashMap<String,String>();
-            item.put("Line1", doctor_details[i][0]);
-            item.put("Line2", doctor_details[i][1]);
-            item.put("Line3", doctor_details[i][2]);
-            item.put("Line4", doctor_details[i][3]);
-            item.put("Line5", "Cons Fees:"+ doctor_details[i][4]+ "/-");
-            list.add(item);
+    private String[][] doctor_details_7 = {
+            {"Doktor Adı : Dr. Zeki Yılmaz", "Hastane Adresi : İstanbul Bulvarı No:123", "Yaş : 48", "Telefon Numarası : 555-123-4567", "600"},
+            {"Doktor Adı : Dr. Nazlı Korkmaz", "Hastane Adresi : Ankara Caddesi No:456", "Yaş : 36", "Telefon Numarası : 555-987-6543", "600"},
+            {"Doktor Adı : Dr. Melis Demir", "Hastane Adresi : İzmir Sokak No:789", "Yaş : 43", "Telefon Numarası : 555-567-8901", "600"},
+            {"Doktor Adı : Dr. Hakan Yıldırım", "Hastane Adresi : Antalya Bulvarı No:321", "Yaş : 40", "Telefon Numarası : 555-234-5678", "600"},
+            {"Doktor Adı : Dr. Zehra Çelik", "Hastane Adresi : Bursa Caddesi No:654", "Yaş : 38", "Telefon Numarası : 555-876-5432", "600"}
+    };
 
 
 
 
-        }
-        sa=new SimpleAdapter()
-
-
-
-
-
-    }
 
 }
