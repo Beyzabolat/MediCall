@@ -67,7 +67,9 @@ public class HomeActivity extends AppCompatActivity {
                         Intent doctorIntent = new Intent(HomeActivity.this, FindDoctorActivity.class);
                         startActivity(doctorIntent);
                         break;
-                    // Buraya diğer durumları ekleyin
+                    case 1:
+                        Intent labTestIntent = new Intent(HomeActivity.this, LabTestActivity.class);
+                        startActivity(labTestIntent);
                 }
             }
         });
