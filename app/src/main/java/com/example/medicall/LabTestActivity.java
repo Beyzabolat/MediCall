@@ -53,6 +53,12 @@ public class LabTestActivity extends AppCompatActivity {
         btnGotoCart=findViewById(R.id.buttoncart);
         listView=findViewById(R.id.listviewT);
 
+        btnGotoCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LabTestActivity.this, CartLabActivity.class));
+            }
+        });
 
         ImageButton backButton = findViewById(R.id.btn_back);
         backButton.setOnClickListener(new View.OnClickListener() {
