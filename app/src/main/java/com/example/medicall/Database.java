@@ -9,6 +9,8 @@ import android.icu.lang.UProperty;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class Database extends SQLiteOpenHelper {
     public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -21,6 +23,9 @@ public class Database extends SQLiteOpenHelper {
 
         String qry2= "create table cart(username text, product text, price float, Otype text )";
         sqLiteDatabase.execSQL(qry2);
+
+        String qry3= "create table orderPlace(username text, fullname text, address float, contactno text,pincode int, date text, time text, amount float, Otype text)";
+        sqLiteDatabase.execSQL(qry3);
 
     }
 
@@ -83,4 +88,58 @@ public class Database extends SQLiteOpenHelper {
         db.delete("cart","username=? and 0type=?",str);
         db.close();
     }
+
+
+
+    public ArrayList getCartData(String username, String Otype){
+        ArrayList<String > arr=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+        String str[]= new String[2];
+        str[0]=username;
+        str[1]=Otype;
+        Cursor c =db.rawQuery("select * from cart where username=? and Otype=?",str);
+        if (c.moveToFirst()){
+            do{
+                String prouct=c.getString(1);
+                String price=c.getString(2);
+                arr.add(prouct+"₺"+price);
+
+            }
+            while (c.moveToNext());
+        }
+        db.close();
+        return arr;
+    }
+
+    public void addOrder(String username, String fullname,String address,String contact,int pincode, String date,String time,float price, String Otype ){
+       ContentValues cv=new ContentValues();
+       cv.put("username",username);
+       cv.put("fullname",fullname);
+       cv.put("address",address);
+       cv.put("contactno",contact);
+       cv.put("pincode",pincode);
+       cv.put("date",date);
+       cv.put("time",time);
+       cv.put("amount",price);
+       cv.put("Utype",Otype);
+       SQLiteDatabase db=getWritableDatabase();
+       db.insert("orderplace", null,cv);
+       db.close();
+    }
+    public ArrayList getOrderData(String username){
+        ArrayList<String > arr=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+        String str[]= new String[1];
+        str[0]=username;
+        Cursor c =db.rawQuery("select * from orderplace where username=?",str);
+        if (c.moveToFirst()){
+            do{
+                arr.add(c.getString(1)+"₺"+c.getString(2)+"₺"+c.getString(3)+"₺"+c.getString(4)+"₺"+c.getString(5)+"₺"+c.getString(6)+"₺"+c.getString(7)+"₺"+c.getString(8));
+            }
+            while (c.moveToNext());
+        }
+        db.close();
+        return arr;
+    }
+
 }

@@ -27,9 +27,9 @@ public class HomeActivity extends AppCompatActivity {
     int[] covers = new int[]{
             R.drawable.home51,
             R.drawable.home21,
+            R.drawable.home61,
             R.drawable.home31,
-            R.drawable.home41,
-            R.drawable.home1,
+            R.drawable.home71,
             R.drawable.home2
     };
 
@@ -70,6 +70,9 @@ public class HomeActivity extends AppCompatActivity {
                     case 1:
                         Intent labTestIntent = new Intent(HomeActivity.this, LabTestActivity.class);
                         startActivity(labTestIntent);
+                    case 2:
+                        Intent orderDetails = new Intent(HomeActivity.this, OrderDetailsActivity.class);
+                        startActivity(orderDetails);
                 }
             }
         });

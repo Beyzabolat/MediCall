@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -41,10 +40,10 @@ public class BookAppointmentActivity extends AppCompatActivity {
 
 
         tv=findViewById(R.id.textViewAppTitle);
-        ed1=findViewById(R.id.editTextAppFullName);
-        ed2=findViewById(R.id.editTextAppAdress);
-        ed3=findViewById(R.id.editTextAppPhoneNumber);
-        ed4=findViewById(R.id.editTextAppUcret);
+        ed1=findViewById(R.id.editTextLBTFullName);
+        ed2=findViewById(R.id.editTextLBTAdress);
+        ed3=findViewById(R.id.editTextLBTPhoneNumber);
+        ed4=findViewById(R.id.editTextLBTpin);
         dateButton=findViewById(R.id.buttonAppDate);
         timeButton=findViewById(R.id.buttonAppTime);
         btnBook=findViewById(R.id.buttonAppointment);
