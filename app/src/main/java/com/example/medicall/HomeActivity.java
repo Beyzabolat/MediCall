@@ -70,9 +70,11 @@ public class HomeActivity extends AppCompatActivity {
                     case 1:
                         Intent labTestIntent = new Intent(HomeActivity.this, LabTestActivity.class);
                         startActivity(labTestIntent);
+                        break; // İlgili "break" ifadesi eklenmeli
                     case 2:
                         Intent orderDetails = new Intent(HomeActivity.this, OrderDetailsActivity.class);
                         startActivity(orderDetails);
+                        break; // İlgili "break" ifadesi eklenmeli
                 }
             }
         });

@@ -41,7 +41,7 @@ public class LabTestBookActivity extends AppCompatActivity {
                 Database db=new Database(getApplicationContext(),"healthcare",null,1);
                 db.addOrder(username,edname.getText().toString(),edaddres.getText().toString(),edcontact.getText().toString(),Integer.parseInt(edpinkod.getText().toString()),date.toString(),time.toString(),Float.parseFloat(price[1].toString()),"lab");
                 db.removeCart(username,"lab");
-                Toast.makeText(getApplicationContext(),"Randevunuz başarıyla oluşturuldu.",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Randevunuz başarıyla oluşturuldu.", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(LabTestBookActivity.this,HomeActivity.class));
 
             }

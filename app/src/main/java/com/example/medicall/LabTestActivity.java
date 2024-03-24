@@ -75,14 +75,14 @@ public class LabTestActivity extends AppCompatActivity {
             item.put("line2", packages[i][1]);
             item.put("line3", packages[i][2]);
             item.put("line4", packages[i][3]);
-            item.put("line5","Toplam Tutar"+ packages[i][4]+ "/-");
+            item.put("line5", packages[i][4]+ "/-");
             list.add(item);
 
 
             sa=new SimpleAdapter(this,list, R.layout.multi_lines2,
                     new String[]
                     {"line1","line2","line3","line4","line5"},
-                    new int[]{R.id.textViewTestName,R.id.textViewTestResult,R.id.textViewTestDetails});
+                    new int[]{R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e});
           listView.setAdapter(sa);
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

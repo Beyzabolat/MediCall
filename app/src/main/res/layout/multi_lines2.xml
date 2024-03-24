@@ -16,41 +16,46 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewTestName"
+        android:id="@+id/line_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/textViewTestResultLabel"
-        android:layout_width="wrap_content"
+        android:id="@+id/line_b"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sonuç:"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp" />
-
+        android:textSize="16sp" />
     <TextView
-        android:id="@+id/textViewTestResult"
+        android:id="@+id/line_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/line_d"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
+
+
+
     <TextView
-        android:id="@+id/textViewTestDetailsLabel"
+        android:id="@+id/textViewTestCostLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Detaylar:"
+        android:text="Ücreti:"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="8dp" />
 
     <TextView
-        android:id="@+id/textViewTestDetails"
+        android:id="@+id/line_e"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"

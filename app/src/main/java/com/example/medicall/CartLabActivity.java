@@ -38,11 +38,11 @@ ListView lst;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_lab);
 
-        dateButton=findViewById(R.id.buttonAppDate);
-        timebutton=findViewById(R.id.buttonAppTime);
+        dateButton=findViewById(R.id.buttonCartAppDate);
+        timebutton=findViewById(R.id.buttonCartAppTime);
         btncheckout=findViewById(R.id.buttoncheckout);
         tvTotal=findViewById(R.id.textViewtotalCost);
-        lst=findViewById(R.id.listViewCart);
+        lst=findViewById(R.id.listViewOD);
 
 
         SharedPreferences sharedPreferences=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
@@ -63,7 +63,7 @@ ListView lst;
             String arrData=dbData.get(i).toString();
             String[] strData=arrData.split(java.util.regex.Pattern.quote("₺"));
             packages[i][0]=strData[0];
-            packages[i][2]=strData[1]+"/-";
+            packages[i][4]=strData[1]+"/-";
             totalAmount=totalAmount+Float.parseFloat(strData[1]);
 
 
@@ -76,13 +76,15 @@ ListView lst;
             item.put("line1", packages[i][0]);
             item.put("line2", packages[i][1]);
             item.put("line3", packages[i][2]);
+            item.put("line4", packages[i][3]);
+            item.put("line5", packages[i][4]);
             list.add(item);
         }
 
         sa=new SimpleAdapter(this,list,
-                R.layout.multi_lines3,
-                new String[]{"line1","line2","line3"},
-                new int[]{R.id.textViewTestName,R.id.textViewTestType,R.id.textViewTestCost});
+                R.layout.multi_lines2,
+                new String[]{"line1","line2","line3","line4","line5"},
+                new int[]{R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e});
         lst.setAdapter(sa);
 
 

@@ -39,14 +39,14 @@
         android:id="@+id/textViewtotalCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="236dp"
         android:text="Toplam Tutar: "
         android:textColor="@color/purple_200"
-        android:textSize="20dp"
+        android:textSize="18dp"
         app:flow_horizontalBias="0.51"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -64,39 +64,39 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewtotalCost"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <Button
-        android:id="@+id/buttonAppDate"
-        android:layout_width="126dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/login_btn_background"
-        android:text="Gün Seç"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewtotalCost" />
-
-    <Button
-        android:id="@+id/buttonAppTime"
+        android:id="@+id/buttonCartAppTime"
+        style="?android:spinnerStyle"
         android:layout_width="124dp"
         android:layout_height="44dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/login_btn_background"
+        android:layout_marginTop="36dp"
         android:text="Saat Seç"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorBlack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewtotalCost" />
 
+    <Button
+        android:id="@+id/buttonCartAppDate"
+        style="?android:spinnerStyle"
+        android:layout_width="126dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:text="Gün Seç"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtotalCost" />
+
     <ListView
-        android:id="@+id/listViewCart"
+        android:id="@+id/listViewOD"
         android:layout_width="263dp"
         android:layout_height="343dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttoncheckout"

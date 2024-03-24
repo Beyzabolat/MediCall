@@ -24,10 +24,10 @@ public class Database extends SQLiteOpenHelper {
         String qry2= "create table cart(username text, product text, price float, Otype text )";
         sqLiteDatabase.execSQL(qry2);
 
-        String qry3= "create table orderPlace(username text, fullname text, address float, contactno text,pincode int, date text, time text, amount float, Otype text)";
+        String qry3= "create table orderplace(username text, fullname text, address float, contactno text,pincode int, date text, time text, amount float, Otype text)";
         sqLiteDatabase.execSQL(qry3);
-
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
@@ -85,7 +85,7 @@ public class Database extends SQLiteOpenHelper {
         str[0] = username;
         str[1] = Otype;
         SQLiteDatabase db = getReadableDatabase();
-        db.delete("cart","username=? and 0type=?",str);
+        db.delete("cart","username=? and Otype=?",str);
         db.close();
     }
 
@@ -121,25 +121,27 @@ public class Database extends SQLiteOpenHelper {
        cv.put("date",date);
        cv.put("time",time);
        cv.put("amount",price);
-       cv.put("Utype",Otype);
+       cv.put("Otype",Otype);
        SQLiteDatabase db=getWritableDatabase();
        db.insert("orderplace", null,cv);
        db.close();
     }
-    public ArrayList getOrderData(String username){
-        ArrayList<String > arr=new ArrayList<>();
-        SQLiteDatabase db=getReadableDatabase();
-        String str[]= new String[1];
+    public ArrayList getOrderData(String username) {
+        ArrayList<String> arr = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        String[] str = new String[1];
         str[0]=username;
-        Cursor c =db.rawQuery("select * from orderplace where username=?",str);
-        if (c.moveToFirst()){
-            do{
-                arr.add(c.getString(1)+"₺"+c.getString(2)+"₺"+c.getString(3)+"₺"+c.getString(4)+"₺"+c.getString(5)+"₺"+c.getString(6)+"₺"+c.getString(7)+"₺"+c.getString(8));
-            }
-            while (c.moveToNext());
+        Cursor c = db.rawQuery("select * from orderplace where username=?", str);
+        if (c.moveToFirst()) {
+            do {
+                arr.add(c.getString(1) + "₺" + c.getString(2) + "₺" + c.getString(3) + "₺" + c.getString(4) + "₺" + c.getString(5) + "₺" + c.getString(6) + "₺" + c.getString(7) + "₺" + c.getString(8));
+            } while (c.moveToNext());
         }
+        c.close(); // Cursor'ı kapatmayı unutmayın.
         db.close();
         return arr;
     }
+
+
 
 }

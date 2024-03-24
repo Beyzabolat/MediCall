@@ -86,6 +86,13 @@ public class BookAppointmentActivity extends AppCompatActivity {
             }
         });
 
+        btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
  }
  private void initDatePicker(){
         DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {

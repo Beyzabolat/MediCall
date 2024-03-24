@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edEmail.getText().toString();
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
-                Database db=new Database(getApplicationContext(), "MediCall", null, 1);
+                Database db=new Database(getApplicationContext(), "healthcare", null, 1);
                 if (username.length() == 0 || email.length() == 0 || password.length() == 0 || confirm.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Lütfen tüm alanları doldurunuz.", Toast.LENGTH_SHORT).show();
                 } else {

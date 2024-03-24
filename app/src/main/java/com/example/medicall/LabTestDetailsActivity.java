@@ -38,7 +38,7 @@ public class LabTestDetailsActivity extends AppCompatActivity {
         Intent intent=getIntent();
         tvpackagename.setText(intent.getStringExtra("text1"));
         edDetails.setText(intent.getStringExtra("text2"));
-        tvTotalcost.setText("Toplam Tutar: "+ intent.getStringExtra("text3"));
+        tvTotalcost.setText("Tutar: "+ intent.getStringExtra("text3"));
 
 
 
