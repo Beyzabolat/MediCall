@@ -28,15 +28,14 @@ public class LabTestActivity extends AppCompatActivity {
                     {"Kolesterol Testi Sonuçları", "", "", "", "149"},
             };
     private String[] packageDetails = {
-            "Genel sağlık durumunu değerlendirmek için kapsamlı bir test paketi",
-            "Kan hücreleri ve kimyasal bileşenlerinin değerlendirilmesi",
-            "İdrar örneğinin analiz edilmesiyle böbrek ve idrar yolu sağlığını değerlendirme",
-            "Karaciğer fonksiyonlarını ölçümlemek için bir dizi test",
-            "Tiroid hormonları ve işlevi hakkında bilgi sağlamak için kullanılır",
-            "Kandaki kolesterol seviyelerini değerlendirerek kardiyovasküler sağlık hakkında bilgi verir",
-            "Tüm Vücut Tarama\n\nComplete Hemogram\n\nDolaşım sistemini, enfeksiyonları, kansızlığı ve diğer kan hastalıklarını değerlendirmek için kapsamlı bir test paketi",
-            // Diğer alt paketlerin detayları buraya eklenecek
+            "Genel sağlık durumunu değerlendirmek için kapsamlı bir test paketi", // Tüm Vücut Tarama
+            "Kan hücreleri ve kimyasal bileşenlerinin değerlendirilmesi", // Kan Testi Sonuçları
+            "İdrar örneğinin analiz edilmesiyle böbrek ve idrar yolu sağlığını değerlendirme", // İdrar Testi Sonuçları
+            "Karaciğer fonksiyonlarını ölçümlemek için bir dizi test", // Karaciğer Fonksiyon Testi
+            "Tiroid hormonları ve işlevi hakkında bilgi sağlamak için kullanılır", // Tiroid Testi Sonuçları
+            "Kandaki kolesterol seviyelerini değerlendirerek kardiyovasküler sağlık hakkında bilgi verir" // Kolesterol Testi Sonuçları
     };
+
 
     HashMap<String, String> item;
     ArrayList list;
@@ -75,7 +74,7 @@ public class LabTestActivity extends AppCompatActivity {
             item.put("line2", packages[i][1]);
             item.put("line3", packages[i][2]);
             item.put("line4", packages[i][3]);
-            item.put("line5", packages[i][4]+ "/-");
+            item.put("line5", packages[i][4]+ "₺/-");
             list.add(item);
 
 
