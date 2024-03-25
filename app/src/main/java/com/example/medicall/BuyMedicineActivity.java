@@ -84,7 +84,7 @@ public class BuyMedicineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_medicine);
 
-        lst=findViewById(R.id.listviewBM);
+        lst=findViewById(R.id.listviewBMB);
         btnMed=findViewById(R.id.buttonmedicine);
         ImageButton backButton = findViewById(R.id.btn_back);
         backButton.setOnClickListener(new View.OnClickListener() {

@@ -46,7 +46,7 @@
 
 
             <EditText
-                android:id="@+id/editTextMBFullName"
+                android:id="@+id/editTextBMBFullName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -67,7 +67,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editTextMBAdress"
+                android:id="@+id/editTextBMBAdress"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -88,7 +88,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editTextMBPhoneNumber"
+                android:id="@+id/editTextBMBPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -109,7 +109,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editTextMBpin"
+                android:id="@+id/editTextBMBpin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
@@ -129,7 +129,7 @@
 
 
             <Button
-                android:id="@+id/buttonMBBooking"
+                android:id="@+id/buttonBMBBooking"
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

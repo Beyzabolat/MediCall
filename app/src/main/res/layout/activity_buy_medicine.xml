@@ -20,9 +20,9 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toStartOf="@id/listviewBM"
-            app:layout_constraintEnd_toEndOf="@id/listviewBM"
-            app:layout_constraintTop_toBottomOf="@id/listviewBM"
+            app:layout_constraintStart_toStartOf="@id/listviewBMB"
+            app:layout_constraintEnd_toEndOf="@id/listviewBMB"
+            app:layout_constraintTop_toBottomOf="@id/listviewBMB"
             android:layout_marginTop="16dp"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewDDName"
+            android:id="@+id/textViewBMBName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="İlaç Satın Al"
@@ -59,7 +59,7 @@
 
 
         <ListView
-            android:id="@+id/listviewBM"
+            android:id="@+id/listviewBMB"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDDName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBMBName"
             app:layout_constraintVertical_bias="0.38" />
 
 

@@ -102,7 +102,7 @@
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ödeme"
+            android:text="Ücret"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 
@@ -113,7 +113,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Ödeme giriniz"
+            android:hint="Ücret"
             android:inputType="number"
             android:padding="16dp"
             android:textColorHighlight="#5c5f72"

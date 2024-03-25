@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -64,7 +67,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
         ed1.setText(fullname);
         ed2.setText(adress);
         ed3.setText(contact);
-        ed4.setText("Ücret"+ ucret+"/-");
+        ed4.setText( ucret+"/-");
 
 
         //datepicker
@@ -90,6 +93,21 @@ public class BookAppointmentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Database db=new Database(getApplicationContext(),"healthcare",null,1);
+                SharedPreferences sharedPreferences=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                String username=sharedPreferences.getString("username"," ").toString();
+
+                if (db.checkAppointmentExists(username,title+" => "+ fullname,adress,contact,dateButton.getText().toString(),timeButton.getText().toString())==1)
+                {
+                    Toast.makeText(getApplicationContext(),"Randevunuz zaten oluşturulmuş.",Toast.LENGTH_LONG).show();
+
+                }
+                else{
+                    db.addOrder(username,title+" => "+fullname,adress,contact,0,dateButton.getText().toString(),timeButton.getText().toString(),Float.parseFloat(ucret),"appointment");
+                    Toast.makeText(getApplicationContext(),"Randevunuz başarıyla oluşturulmuştur.",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(BookAppointmentActivity.this,HomeActivity.class));
+
+                }
             }
         });
 

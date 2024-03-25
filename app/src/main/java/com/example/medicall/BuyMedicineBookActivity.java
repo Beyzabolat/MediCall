@@ -19,11 +19,12 @@ public class BuyMedicineBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_medicine_book);
 
-        edname=findViewById(R.id.editTextMBFullName);
-        edaddres=findViewById(R.id.editTextMBAdress);
-        edcontact=findViewById(R.id.editTextMBPhoneNumber);
-        edpinkod=findViewById(R.id.editTextMBpin);
-        btnBooking=findViewById(R.id.buttonMBBooking);
+        edname=findViewById(R.id.editTextBMBFullName);
+        edaddres=findViewById(R.id.editTextBMBAdress);
+        edcontact=findViewById(R.id.editTextBMBPhoneNumber);
+        edpinkod=findViewById(R.id.editTextBMBpin);
+        btnBooking=findViewById(R.id.buttonBMBBooking);
+
         Intent intent=getIntent();
         String[] price=intent.getStringExtra("price").toString().split(java.util.regex.Pattern.quote(":"));
         String date=intent.getStringExtra("date");
@@ -37,7 +38,7 @@ public class BuyMedicineBookActivity extends AppCompatActivity {
                 String username=sharedPreferences.getString("username"," ").toString();
 
                 Database db=new Database(getApplicationContext(),"healthcare",null,1);
-                db.addOrder(username,edname.getText().toString(),edaddres.getText().toString(),edcontact.getText().toString(),Integer.parseInt(edpinkod.getText().toString()),date.toString(),time.toString(),Float.parseFloat(price[1].toString()),"medicine");
+                db.addOrder(username,edname.getText().toString(),edaddres.getText().toString(),edcontact.getText().toString(),Integer.parseInt(edpinkod.getText().toString()),date.toString()," ",Float.parseFloat(price[1].toString()),"medicine");
                 db.removeCart(username,"medicine");
                 Toast.makeText(getApplicationContext(), "Randevunuz başarıyla oluşturuldu.", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(BuyMedicineBookActivity.this,HomeActivity.class));
