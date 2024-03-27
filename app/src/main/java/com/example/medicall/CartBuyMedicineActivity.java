@@ -39,7 +39,6 @@ public class CartBuyMedicineActivity extends AppCompatActivity {
 
 
         dateButton = findViewById(R.id.buttonCartMEDDate);
-        timebutton = findViewById(R.id.buttonCartTimemed);
         btncheckout = findViewById(R.id.buttoncheckoutmed);
         tvTotal = findViewById(R.id.textViewtotalCostmed);
         lst = findViewById(R.id.listViewMD);

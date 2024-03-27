@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
             R.drawable.home21,
             R.drawable.home61,
             R.drawable.home71,
-            R.drawable.home31,
+            R.drawable.home81,
             R.drawable.home2
     };
 
@@ -78,6 +78,10 @@ public class HomeActivity extends AppCompatActivity {
                     case 3:
                         Intent buyMedicine = new Intent(HomeActivity.this, BuyMedicineActivity.class);
                         startActivity(buyMedicine);
+                        break; // İlgili "break" ifadesi eklenmeli
+                    case 4:
+                        Intent appointments = new Intent(HomeActivity.this, AppointmentActivity.class);
+                        startActivity(appointments);
                         break; // İlgili "break" ifadesi eklenmeli
                 }
             }

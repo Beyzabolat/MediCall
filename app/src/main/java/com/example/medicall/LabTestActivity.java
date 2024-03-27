@@ -18,15 +18,16 @@ public class LabTestActivity extends AppCompatActivity {
 
 
 
-    private String[][] packages=
-            {
-                    {"Tüm Vücut Tarama", "", "", "", "999"},
-                    {"Kan Testi Sonuçları", "", "", "", "299"},
-                    {"İdrar Testi Sonuçları", "", "", "", "199"},
-                    {"Karaciğer Fonksiyon Testi", "", "", "", "399"},
-                    {"Tiroid Testi Sonuçları", "", "", "", "199"},
-                    {"Kolesterol Testi Sonuçları", "", "", "", "149"},
-            };
+    private String[][] packages = {
+            {"Tüm Vücut Tarama", "Tüm vücut sağlık taraması", "Tüm vücut tarama sonuçlarının değerlendirilmesi", "Tüm Vücut", "999"},
+            {"Kan Testi Sonuçları", "Kan testi sonuçları", "Kan örneği analizinin sonuçları", "Kan", "299"},
+            {"İdrar Testi Sonuçları", "İdrar testi sonuçları", "İdrar örneği analizinin sonuçları", "İdrar", "199"},
+            {"Karaciğer Fonksiyon Testi", "Karaciğer fonksiyon testi", "Karaciğer fonksiyonlarını değerlendiren test sonuçları", "Karaciğer", "399"},
+            {"Tiroid Testi Sonuçları", "Tiroid testi sonuçları", "Tiroid hormonlarının değerlendirilmesi", "Tiroid", "199"},
+            {"Kolesterol Testi Sonuçları", "Kolesterol testi sonuçları", "Kolesterol seviyelerinin değerlendirilmesi", "Kolesterol", "149"}
+    };
+
+
     private String[] packageDetails = {
             "Genel sağlık durumunu değerlendirmek için kapsamlı bir test paketi", // Tüm Vücut Tarama
             "Kan hücreleri ve kimyasal bileşenlerinin değerlendirilmesi", // Kan Testi Sonuçları

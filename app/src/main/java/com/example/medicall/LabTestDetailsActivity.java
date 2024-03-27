@@ -38,7 +38,7 @@ public class LabTestDetailsActivity extends AppCompatActivity {
         Intent intent=getIntent();
         tvpackagename.setText(intent.getStringExtra("text1"));
         edDetails.setText(intent.getStringExtra("text2"));
-        tvTotalcost.setText("Tutar: "+ intent.getStringExtra("text3"));
+        tvTotalcost.setText("Tutar: "+ intent.getStringExtra("text3")+"₺");
 
 
 
@@ -53,7 +53,6 @@ public class LabTestDetailsActivity extends AppCompatActivity {
         btnAddtocard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 SharedPreferences sharedPreferences=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                 String username=sharedPreferences.getString("username", " ").toString();
                 String product=tvpackagename.getText().toString();

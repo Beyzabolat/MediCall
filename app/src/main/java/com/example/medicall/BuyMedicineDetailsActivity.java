@@ -33,7 +33,7 @@ public class BuyMedicineDetailsActivity extends AppCompatActivity {
         Intent intent=getIntent();
         tvpackagenamemed.setText(intent.getStringExtra("text1"));
         edDetailss.setText(intent.getStringExtra("text2"));
-        tvTotalcost.setText("Tutar: "+ intent.getStringExtra("text3"));
+        tvTotalcost.setText("Tutar: "+ intent.getStringExtra("text3")+"₺");
 
 
         ImageButton backButton = findViewById(R.id.btn_back);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/meddetailsback"
+    android:background="@drawable/medback2"
     tools:context=".BuyMedicineDetailsActivity">
 
 
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
             android:text="TextView"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             app:flow_horizontalBias="0.51"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +76,7 @@
             android:layout_width="304dp"
             android:layout_height="423dp"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:ems="10"
             android:text="Merhaba!"
             android:gravity="start|top"

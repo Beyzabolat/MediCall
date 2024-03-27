@@ -47,32 +47,32 @@ public class BuyMedicineActivity extends AppCompatActivity {
     };
 
 
-    private String[][] packages_details = {
-            {"Aspirin, kan inceltici ve ağrı kesici ilaç."},
-            {"Voltaren, ağrı kesici ve iltihap önleyici ilaç."},
-            {"Panadol, ağrı kesici ve ateş düşürücü ilaç."},
-            {"Nurofen, ağrı kesici ve ateş düşürücü ilaç."},
-            {"Advil, ağrı kesici ve ateş düşürücü ilaç."},
-            {"Tylenol, ağrı kesici ve ateş düşürücü ilaç."},
-            {"Claritin, alerji semptomlarını hafifleten ilaç."},
-            {"Zyrtec, alerji semptomlarını hafifleten ilaç."},
-            {"Benadryl, alerji semptomlarını hafifleten ilaç."},
-            {"Sancotec, kas spazmlarını ve ağrılarını hafifleten ilaç."},
-            {"Buscopan, kas spazmlarını hafifleten ilaç."},
-            {"Daleron, ağrı kesici ilaç."},
-            {"Neurodex, nörolojik sorunları tedavi eden ilaç."},
-            {"Ranitidine, mide asidini azaltan ilaç."},
-            {"Cipralex, antidepresan ilaç."},
-            {"Tramadol, şiddetli ağrıları kesen ilaç."},
-            {"Lustral, antidepresan ilaç."},
-            {"Dexamethasone, iltihap önleyici ve bağışıklık sistemini baskılayan ilaç."},
-            {"Prednol, iltihap önleyici ilaç."},
-            {"Amoxicillin, antibiyotik ilaç."},
-            {"Cefuroxime, antibiyotik ilaç."},
-            {"Clarithromycin, antibiyotik ilaç."},
-            {"Fluconazole, mantar enfeksiyonlarını tedavi eden ilaç."},
-            // Diğer ilaçların açıklamaları buraya eklenebilir
+    private String[] packages_details = {
+            "Aspirin, kan inceltici ve ağrı kesici ilaç.",
+            "Voltaren, ağrı kesici ve iltihap önleyici ilaç.",
+            "Panadol, ağrı kesici ve ateş düşürücü ilaç.",
+            "Nurofen, ağrı kesici ve ateş düşürücü ilaç.",
+            "Advil, ağrı kesici ve ateş düşürücü ilaç.",
+            "Tylenol, ağrı kesici ve ateş düşürücü ilaç.",
+            "Claritin, alerji semptomlarını hafifleten ilaç.",
+            "Zyrtec, alerji semptomlarını hafifleten ilaç.",
+            "Benadryl, alerji semptomlarını hafifleten ilaç.",
+            "Sancotec, kas spazmlarını ve ağrılarını hafifleten ilaç.",
+            "Buscopan, kas spazmlarını hafifleten ilaç.",
+            "Daleron, ağrı kesici ilaç.",
+            "Neurodex, nörolojik sorunları tedavi eden ilaç.",
+            "Ranitidine, mide asidini azaltan ilaç.",
+            "Cipralex, antidepresan ilaç.",
+            "Tramadol, şiddetli ağrıları kesen ilaç.",
+            "Lustral, antidepresan ilaç.",
+            "Dexamethasone, iltihap önleyici ve bağışıklık sistemini baskılayan ilaç.",
+            "Prednol, iltihap önleyici ilaç.",
+            "Amoxicillin, antibiyotik ilaç.",
+            "Cefuroxime, antibiyotik ilaç.",
+            "Clarithromycin, antibiyotik ilaç.",
+            "Fluconazole, mantar enfeksiyonlarını tedavi eden ilaç."
     };
+
     HashMap<String ,String> item;
     ArrayList list;
     SimpleAdapter sa;
@@ -119,8 +119,8 @@ public class BuyMedicineActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent it=new Intent(BuyMedicineActivity.this,BuyMedicineDetailsActivity.class);
                 it.putExtra("text1",packages[i][0]);
-                it.putExtra("text2",packages[i]);
-                it.putExtra("text3",packages[i][4]+"₺");
+                it.putExtra("text2",packages_details[i]);
+                it.putExtra("text3",packages[i][4]);
                 startActivity(it);
             }
         });
