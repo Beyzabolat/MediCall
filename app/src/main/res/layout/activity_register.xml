@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back2" />
+        app:srcCompat="@drawable/back18" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -148,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
         android:text="MediCall"
-        android:textColor="#b172ef"
+        android:textColor="#5B2267"
         android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

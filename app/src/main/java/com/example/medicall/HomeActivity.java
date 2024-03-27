@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
             R.drawable.home61,
             R.drawable.home71,
             R.drawable.home81,
-            R.drawable.home2
+            R.drawable.home91
     };
 
     @Override
@@ -59,6 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         IntializeDataIntoRecyclerView();
 
 
+
         adapter.setOnItemClickListener(new RecyclerViewAdaptery.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -83,6 +85,15 @@ public class HomeActivity extends AppCompatActivity {
                         Intent appointments = new Intent(HomeActivity.this, AppointmentActivity.class);
                         startActivity(appointments);
                         break; // İlgili "break" ifadesi eklenmeli
+
+                    case 5:
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+                        editor.clear();
+                        editor.apply();
+                        Intent exit = new Intent(HomeActivity.this, LoginActivity.class);
+                        startActivity(exit);
+                        break; // İlgili "break" ifadesi eklenmeli
+
                 }
             }
         });

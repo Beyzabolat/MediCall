@@ -33,10 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                /*String username=editTextLoginUsername.getText().toString();
+                String username=editTextLoginUsername.getText().toString();
                 String password=editTextPassword.getText().toString();
-                Database db=new Database(getApplicationContext(), "MediCall", null, 1);
+                Database db=new Database(getApplicationContext(), "healthcare", null, 1);
 
                 if(username.length()==0|| password.length()==0)
                 {
@@ -58,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Geçersiz kullanıcı adı ve şifre", Toast.LENGTH_SHORT).show();
                     }
 
-                }*/
+                }
 
 
 
